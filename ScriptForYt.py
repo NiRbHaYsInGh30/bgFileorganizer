@@ -14,4 +14,5 @@ print("View: ", yt.views)
 yd = yt.streams.get_highest_resolution()
 
 # ADD FOLDER HERE
-yd.download('D:\Games')
+yd.download('C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads')
+ 
