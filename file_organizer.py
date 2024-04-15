@@ -9,13 +9,14 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 # fill below the dir location
-source_dir = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads"
-dest_dir_sfx = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads\\sfx"
-dest_dir_music = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads\\Audio"
-dest_dir_video = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads\\videos"
-dest_dir_image = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads\\images"
-dest_dir_documents = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads\\Docs"
-
+# using r so python can know its a raw string literal and not to escape after one backlash
+    
+source_dir = r"C:\Users\LENOVO\Downloads"
+dest_dir_sfx = r"C:\Users\LENOVO\Downloads\Audi"
+dest_dir_music = r"C:\Users\LENOVO\Downloads\music"
+dest_dir_video = r"C:\Users\LENOVO\Downloads\Vid"
+dest_dir_image = r"C:\Users\LENOVO\Downloads\img"
+dest_dir_documents = r"C:\Users\LENOVO\Downloads\Documents"
 #  supported image types
 image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", ".gif", ".webp", ".tiff", ".tif", ".psd", ".raw", ".arw", ".cr2", ".nrw",
                     ".k25", ".bmp", ".dib", ".heif", ".heic", ".ind", ".indd", ".indt", ".jp2", ".j2k", ".jpf", ".jpf", ".jpx", ".jpm", ".mj2", ".svg", ".svgz", ".ai", ".eps", ".ico"]

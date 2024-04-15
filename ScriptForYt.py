@@ -15,4 +15,5 @@ yd = yt.streams.get_highest_resolution()
 
 # ADD FOLDER HERE
 yd.download('C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads')
+# yd.download('C:\\Users\\LENOVO\\OneDrive\\Desktop\\coding\\PythonAutomationScripts\\Downloads')
  
