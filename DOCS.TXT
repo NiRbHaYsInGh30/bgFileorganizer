@@ -1,0 +1,75 @@
+BG File Organizer Script
+This Python script automates the organization of downloaded files based on their type (audio, video, image, document). It continuously monitors a designated download directory (source_dir) and moves newly downloaded files to appropriate subdirectories within the same directory structure.
+
+Dependencies
+watchdog: A Python library that monitors file system events.
+You can install it using pip:
+
+bash
+Copy code
+pip install watchdog
+Directory Setup
+Modify the following variables to point to your desired directories:
+
+python
+Copy code
+source_dir = r"C:\Users\LENOVO\Downloads"
+dest_dir_sfx = r"C:\Users\LENOVO\Downloads\Audi"
+dest_dir_music = r"C:\Users\LENOVO\Downloads\music"
+dest_dir_video = r"C:\Users\LENOVO\Downloads\Vid"
+dest_dir_image = r"C:\Users\LENOVO\Downloads\img"
+dest_dir_documents = r"C:\Users\LENOVO\Downloads\Documents"
+Supported File Types
+The script supports categorizing files into audio, video, image, and document types based on their extensions.
+
+python
+Copy code
+# Supported image types
+image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", ".gif", ".webp", ".tiff", ".tif", ".psd", ".raw", ".arw", ".cr2", ".nrw", ".k25", ".bmp", ".dib", ".heif", ".heic", ".ind", ".indd", ".indt", ".jp2", ".j2k", ".jpf", ".jpf", ".jpx", ".jpm", ".mj2", ".svg", ".svgz", ".ai", ".eps", ".ico"]
+
+# Supported video types
+video_extensions = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".ogg", ".mp4", ".mp4v", ".m4v", ".avi", ".wmv", ".mov", ".qt", ".flv", ".swf", ".avchd"]
+
+# Supported audio types
+audio_extensions = [".m4a", ".flac", "mp3", ".wav", ".wma", ".aac"]
+
+# Supported document types
+document_extensions = [".doc", ".docx", ".odt", ".pdf", ".xls", ".xlsx", ".ppt", ".pptx", ".zip"]
+Helper Functions
+make_unique(dest, name)
+This function ensures that files moved to the destination directory have unique names by appending a counter to the filename if a file with the same name already exists.
+
+move_file(dest, entry, name)
+This function moves a file to the specified destination directory. If a file with the same name already exists, it uses make_unique to rename the existing file.
+
+MoverHandler Class
+This class is a custom event handler that extends FileSystemEventHandler from the watchdog library. It handles file modification events and moves files to appropriate subdirectories based on their extensions.
+
+Methods
+on_modified(self, event): Called when a file or directory is modified. It scans the source directory and checks each file.
+check_audio_files(self, entry, name): Checks if a file is an audio file and moves it to the appropriate directory.
+check_video_files(self, entry, name): Checks if a file is a video file and moves it to the appropriate directory.
+check_image_files(self, entry, name): Checks if a file is an image file and moves it to the appropriate directory.
+check_document_files(self, entry, name): Checks if a file is a document file and moves it to the appropriate directory.
+Main Script
+The following code sets up logging, initializes the Observer, and starts monitoring the source_dir directory for changes.
+
+python
+Copy code
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO,
+                        format='%(asctime)s - %(message)s',
+                        datefmt='%Y-%m-%d %H:%M:%S')
+    path = source_dir
+    event_handler = MoverHandler()
+    observer = Observer()
+    observer.schedule(event_handler, path, recursive=True)
+    observer.start()
+    try:
+        while True:
+            sleep(10)
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
+This script will continue running, checking the download directory for new files and organizing them into the appropriate subdirectories based on their type.
+
