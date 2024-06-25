@@ -1,7 +1,7 @@
-#This Python script automates the organization of downloaded files based on their type (audio, video, image, document). It continuously monitors a designated download directory (source_dir) and moves newly downloaded files to appropriate subdirectories within the same directory structure.
+# This Python script automates the organization of downloaded files based on their type (audio, video, image, document). It continuously monitors a designated download directory (source_dir) and moves newly downloaded files to appropriate subdirectories within the same directory structure.
 
 
-#Features:
+# Features:
 
 File Type Classification: Categorizes files using predefined extensions for audio, video, images, and documents.
 Subdirectory Creation: Creates subdirectories (dest_dir_sfx, dest_dir_music, dest_dir_video, dest_dir_image, dest_dir_documents) within the download directory to organize files.
@@ -16,7 +16,7 @@ Then add the path of your sub dir here in the code
 ![image](https://github.com/NiRbHaYsInGh30/bgFileorganizer/assets/90407590/f0dc1106-92db-4efe-a53f-007dd742712d)
 
 
-#Usage:
+# Usage:
 
 Save Script: Save the script as a Python file (e.g., bg_organizer.py).
 Run Script: Execute the script from your terminal or command prompt using python bg_organizer.py.
