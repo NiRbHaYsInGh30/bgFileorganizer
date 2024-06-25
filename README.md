@@ -16,6 +16,8 @@ Obtain the script [here](https://github.com/NiRbHaYsInGh30/bgFileorganizer).
 ### 2. Set Download Directory
 
 Modify the `source_dir` variable at the beginning of the script to point to your download directory. Replace `C:\Users\LENOVO\Downloads` with your path.
+![image](https://github.com/NiRbHaYsInGh30/bgFileorganizer/assets/90407590/946c4af9-034c-4eef-8543-a14e69cc6f3a)
+
 
 ### 3. Customize Subdirectories (Optional)
 
